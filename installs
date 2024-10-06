@@ -1,2 +1,4 @@
 pip install tabulate
 pip install matplotlib
+pip install seaborn
+pip install plotlys
