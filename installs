@@ -2,3 +2,4 @@ pip install tabulate
 pip install matplotlib
 pip install seaborn
 pip install plotlys
+pip install altair vega-datasets
