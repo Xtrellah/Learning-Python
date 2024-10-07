@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "layer": [{"mark": {"type": "line", "point": true}, "encoding": {"tooltip": [{"field": "createdat", "type": "temporal"}, {"field": "price", "type": "quantitative"}], "x": {"field": "createdat", "title": "Date", "type": "temporal"}, "y": {"field": "price", "title": "Price", "type": "quantitative"}}, "title": "Price History"}, {"mark": {"type": "line", "color": "green", "point": true}, "encoding": {"tooltip": [{"field": "createdat", "type": "temporal"}, {"field": "sold", "type": "quantitative"}], "x": {"field": "createdat", "title": "Date", "type": "temporal"}, "y": {"field": "sold", "title": "Sold Items", "type": "quantitative"}}, "title": "Sold Items Over Time"}], "data": {"name": "data-fed1d214a2e90c522af3ceb85ff31bc0"}, "resolve": {"scale": {"y": "independent"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-fed1d214a2e90c522af3ceb85ff31bc0": [{"id": 1, "createdat": "2024-09-23T00:00:00+00:00", "price": 61.41, "sold": 52}, {"id": 2, "createdat": "2024-09-13T00:00:00+00:00", "price": 59.22, "sold": 49}, {"id": 3, "createdat": "2024-09-03T00:00:00+00:00", "price": 53.4, "sold": 44}, {"id": 4, "createdat": "2024-08-23T00:00:00+00:00", "price": 57.0, "sold": 47}, {"id": 5, "createdat": "2024-08-13T00:00:00+00:00", "price": 60.1, "sold": 50}, {"id": 6, "createdat": "2024-08-03T00:00:00+00:00", "price": 54.3, "sold": 42}, {"id": 7, "createdat": "2024-07-23T00:00:00+00:00", "price": 55.25, "sold": 40}, {"id": 8, "createdat": "2024-07-13T00:00:00+00:00", "price": 58.5, "sold": 48}, {"id": 9, "createdat": "2024-07-03T00:00:00+00:00", "price": 52.75, "sold": 43}, {"id": 10, "createdat": "2024-06-23T00:00:00+00:00", "price": 56.8, "sold": 46}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

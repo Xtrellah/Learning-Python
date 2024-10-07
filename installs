@@ -2,4 +2,6 @@ pip install tabulate
 pip install matplotlib
 pip install seaborn
 pip install plotlys
+pip install bokeh
 pip install altair vega-datasets
+pip install ipython
